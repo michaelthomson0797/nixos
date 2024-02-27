@@ -5,6 +5,7 @@
     ../../modules/home-manager/neovim
     ../../modules/home-manager/wezterm
     ../../modules/home-manager/zsh
+    ../../modules/home-manager/tmux
   ];
   home.username = "mthomson";
   home.homeDirectory = "/Users/mthomson";
@@ -14,6 +15,7 @@
     btop
     spotify-player
     tmuxifier
+    neofetch
   ];
 
   programs.home-manager.enable = true;
