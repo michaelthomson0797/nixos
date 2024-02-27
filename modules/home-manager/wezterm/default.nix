@@ -6,7 +6,7 @@
     extraConfig = ''
     return {
       color_scheme = 'catppuccin-frappe',
-      -- font = wezterm.font('PragmataPro Liga'),
+      font = wezterm.font('PragmataPro Liga'),
       font_size = 16,
       use_fancy_tab_bar = false,
       native_macos_fullscreen_mode = false,
