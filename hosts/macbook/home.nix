@@ -17,7 +17,7 @@
     tmuxifier
     neofetch
     nodejs
-    corepack-nodejs
+    corepack_latest
   ];
 
   programs.home-manager.enable = true;
