@@ -5,7 +5,7 @@
     ../../modules/home-manager/wezterm
   ];
   home.username = "mthomson";
-  home.homeDirectory = "/Users/mthomson";
+  #home.homeDirectory = "/Users/mthomson";
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
