@@ -16,6 +16,8 @@
     spotify-player
     tmuxifier
     neofetch
+    nodejs
+    corepack-nodejs
   ];
 
   programs.home-manager.enable = true;

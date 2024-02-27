@@ -8,6 +8,9 @@
       mouse = true;
       baseIndex = 1;
       tmuxp.enable = true;
+      plugins = with pkgs; [
+        tmuxPlugins.vim-tmux-navigator
+      ];
     };
   };
 }
