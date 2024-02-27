@@ -3,14 +3,14 @@
 {
   imports = [
     ../../modules/home-manager/wezterm
+    ../../modules/home-manager/zsh
   ];
   home.username = "mthomson";
-  #home.homeDirectory = "/Users/mthomson";
+  home.homeDirectory = "/Users/mthomson";
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
-    hello
-    cowsay
+    btop
   ];
 
   programs.home-manager.enable = true;

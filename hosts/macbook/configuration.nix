@@ -10,6 +10,8 @@
     home = "/Users/mthomson";
   };
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   environment.systemPackages = with pkgs; [
     hello
   ];
@@ -19,9 +21,10 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-      "mthomson" = import ./home.nix;
+      mthomson = import ./home.nix;
     };
   };
+  programs.zsh.enable = true;
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
