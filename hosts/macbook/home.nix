@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../modules/home-manager/neovim
     ../../modules/home-manager/wezterm
     ../../modules/home-manager/zsh
   ];
