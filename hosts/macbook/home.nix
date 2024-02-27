@@ -12,6 +12,8 @@
 
   home.packages = with pkgs; [
     btop
+    spotify-player
+    tmuxifier
   ];
 
   programs.home-manager.enable = true;
