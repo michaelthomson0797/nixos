@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    noevim
+    neovim
   ];
   home.file.".config/nvim/" = {
     source = ./nvim;
