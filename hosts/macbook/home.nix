@@ -7,6 +7,9 @@
     ../../modules/home-manager/zsh
     ../../modules/home-manager/tmux
     ../../modules/home-manager/taskwarrior
+    ../../modules/home-manager/zoxide
+    ../../modules/home-manager/eza
+    ../../modules/home-manager/bat
   ];
   home.username = "mthomson";
   home.homeDirectory = "/Users/mthomson";
@@ -19,6 +22,8 @@
     jq
     fzf
     ripgrep
+    tldr
+    cowsay
   ];
 
   programs.home-manager.enable = true;

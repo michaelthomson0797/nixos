@@ -15,6 +15,11 @@
           "zsh-users/zsh-history-substring-search"
         ];
       };
+      shellAliases = {
+        cd = "z";
+        cdi = "zi";
+        cat = "bat";
+      };
     };
     starship = {
       enable = true;
