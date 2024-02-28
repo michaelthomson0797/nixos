@@ -16,8 +16,9 @@
     btop
     spotify-player
     neofetch
-    nodejs
-    corepack_latest
+    jq
+    fzf
+    ripgrep
   ];
 
   programs.home-manager.enable = true;

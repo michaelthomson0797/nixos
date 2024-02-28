@@ -6,6 +6,19 @@
       inputs.home-manager.darwinModules.default
     ];
 
+  nix.settings = {
+    trusted-users = ["mthomson"];
+
+    substituters = [
+      "https://cache.nixos.org"
+      "https://nix-community.cachix.org"
+    ];
+
+    trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
   users.users.mthomson = {
     home = "/Users/mthomson";
   };
