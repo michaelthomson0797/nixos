@@ -19,7 +19,7 @@
 # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
 # Enable networking
-    networking.networkmanager.enable = true;
+  networking.networkmanager.enable = true;
 
 # Set your time zone.
   time.timeZone = "America/Toronto";
@@ -48,11 +48,11 @@
       package = pkgs.i3-gaps;
       extraPackages = with pkgs; [
         dmenu
-          i3status
-          i3lock
-          i3blocks
-          feh
-          arandr
+        i3status
+        i3lock
+        i3blocks
+        feh
+        arandr
       ];
     };
 
@@ -96,7 +96,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-      "mthomson" = import ./home.nix;
+      mthomson = import ./home.nix;
     };
   };
 

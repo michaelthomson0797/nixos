@@ -2,21 +2,23 @@
 
 {
   imports = [
-    ./i3
-    ./wezterm
-    ./nvim
+    ../../modules/home-manager/i3
+    ../../modules/home-manager/neovim
+    ../../modules/home-manager/wezterm
+    ../../modules/home-manager/zsh
+    ../../modules/home-manager/tmux
+    ../../modules/home-manager/taskwarrior
   ];
   home.username = "mthomson";
   home.homeDirectory = "/home/mthomson";
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
-    cowsay
     firefox
     _1password-gui
     gcc
     fzf
-    nodejs
+    ripgrep
   ];
 
   programs.home-manager.enable = true;
