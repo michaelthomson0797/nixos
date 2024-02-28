@@ -10,6 +10,7 @@
     ../../modules/home-manager/zoxide
     ../../modules/home-manager/eza
     ../../modules/home-manager/bat
+    ../../modules/home-manager/irssi
   ];
   home.username = "mthomson";
   home.homeDirectory = "/Users/mthomson";
