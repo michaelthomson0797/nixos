@@ -8,6 +8,10 @@
     ../../modules/home-manager/zsh
     ../../modules/home-manager/tmux
     ../../modules/home-manager/taskwarrior
+    ../../modules/home-manager/zoxide
+    ../../modules/home-manager/eza
+    ../../modules/home-manager/bat
+    ../../modules/home-manager/irssi
   ];
   home.username = "mthomson";
   home.homeDirectory = "/home/mthomson";
@@ -19,6 +23,7 @@
     gcc
     fzf
     ripgrep
+    jq
   ];
 
   programs.home-manager.enable = true;
