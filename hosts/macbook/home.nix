@@ -18,6 +18,7 @@
 
   home.packages = with pkgs; [
     btop
+    spotify
     spotify-player
     neofetch
     jq

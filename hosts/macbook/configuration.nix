@@ -2,9 +2,11 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       inputs.home-manager.darwinModules.default
     ];
+
+  nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
     trusted-users = ["mthomson"];
@@ -28,6 +30,15 @@
   environment.systemPackages = with pkgs; [
     hello
   ];
+
+  services = {
+    skhd = {
+      enable = true;
+      skhdConfig = ''
+        cmd - return : wezterm
+      '';
+    };
+  };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
