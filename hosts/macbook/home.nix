@@ -35,8 +35,6 @@
     spotify-player
     neofetch
     jq
-    fzf
-    ripgrep
     tldr
     cowsay
     lazygit
