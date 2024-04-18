@@ -11,7 +11,6 @@
     ../../modules/home-manager/eza
     ../../modules/home-manager/bat
     ../../modules/home-manager/irssi
-    ../../modules/home-manager/email
   ];
   home.username = "mthomson";
   home.homeDirectory = "/Users/mthomson";
