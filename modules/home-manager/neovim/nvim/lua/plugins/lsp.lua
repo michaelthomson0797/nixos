@@ -4,8 +4,8 @@ return {
   dependencies = {
     -- LSP Support
     {'neovim/nvim-lspconfig'},             -- Required
-    {'williamboman/mason.nvim'},           -- Optional
-    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+    -- {'williamboman/mason.nvim'},           -- Optional
+    -- {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
     -- Autocompletion
     {'hrsh7th/nvim-cmp'},     -- Required
@@ -33,13 +33,13 @@ return {
     end)
 
     -- Mason Config
-    require('mason').setup({})
-    require('mason-lspconfig').setup({
-      ensure_installed = {},
-      handlers = {
-        lsp_zero.default_setup,
-      }
-    })
+    -- require('mason').setup({})
+    -- require('mason-lspconfig').setup({
+    --   ensure_installed = {},
+    --   handlers = {
+    --     lsp_zero.default_setup,
+    --   }
+    -- })
 
     -- cmp Config
 
@@ -77,5 +77,20 @@ return {
         -- ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
       }),
     })
+
+    -- Server configs
+
+    -- vue
+    require('lspconfig').volar.setup({})
+
+    -- typescript / javascript
+    require'lspconfig'.tsserver.setup{
+      filetypes = {
+        "javascript",
+        "typescript",
+        "vue",
+      },
+    }
+
   end,
 }

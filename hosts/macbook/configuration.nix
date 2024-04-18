@@ -31,6 +31,12 @@
     hello
   ];
 
+
+  environment.variables = {
+    EDITOR = "nvim";
+    ZK_NOTEBOOK_DIR = "~/notes";
+  };
+
   services = {
     skhd = {
       enable = true;

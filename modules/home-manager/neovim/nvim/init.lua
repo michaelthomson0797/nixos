@@ -25,7 +25,7 @@ g.maplocalleader = " "
 -- Load plugins
 require('lazy').setup('plugins')
 
-vim.cmd 'colorscheme catppuccin-frappe'
+vim.cmd 'colorscheme catppuccin-mocha'
 
 -- Load core settings
 opt.termguicolors = true -- Enable colors in terminal
@@ -44,6 +44,7 @@ opt.clipboard = "unnamedplus" -- Access system clipboard
 opt.laststatus = 3 -- Global status line
 opt.swapfile = false
 opt.wrap = false
+vim.opt_local.conceallevel = 2
 
 -- Time in milliseconds to wait for a mapped sequence to complete.
 opt.timeoutlen = 300
@@ -84,7 +85,7 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 vim.keymap.set("n", "J", "mzJ`z")
 
-vim.keymap.set("n", "<leader>fe", "<cmd>Explore<CR>")
+vim.keymap.set("n", "<leader>fe", "<cmd>Oil<CR>")
 
 vim.keymap.set("i", "jk", "<Esc>")
 

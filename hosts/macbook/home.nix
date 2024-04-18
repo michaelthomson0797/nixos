@@ -11,10 +11,16 @@
     ../../modules/home-manager/eza
     ../../modules/home-manager/bat
     ../../modules/home-manager/irssi
+    ../../modules/home-manager/email
   ];
   home.username = "mthomson";
   home.homeDirectory = "/Users/mthomson";
   home.stateVersion = "23.11";
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    ZK_NOTEBOOK_DIR = "notes";
+  };
 
   home.packages = with pkgs; [
     btop
@@ -26,6 +32,11 @@
     ripgrep
     tldr
     cowsay
+    lazygit
+    k9s
+    tintin
+    nb
+    w3m
   ];
 
   programs.home-manager.enable = true;
