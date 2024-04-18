@@ -22,6 +22,14 @@
     ZK_NOTEBOOK_DIR = "notes";
   };
 
+  programs = {
+    direnv = {
+      enable = true;
+      enableZshIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
+  };
+
   home.packages = with pkgs; [
     btop
     spotify
@@ -37,6 +45,14 @@
     tintin
     nb
     w3m
+    lua
+    kubectl
+    k9s
+    kubeseal
+    fluxcd
+    wireguard-tools
+    kompose
+    inetutils
   ];
 
   programs.home-manager.enable = true;
