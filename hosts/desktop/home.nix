@@ -3,6 +3,8 @@
 {
   imports = [
     ../../modules/home-manager/i3
+    ../../modules/home-manager/1password
+    ../../modules/home-manager/git
     ../../modules/home-manager/neovim
     ../../modules/home-manager/wezterm
     ../../modules/home-manager/zsh
@@ -19,7 +21,6 @@
 
   home.packages = with pkgs; [
     firefox
-    _1password-gui
     gcc
     fzf
     ripgrep
@@ -27,5 +28,4 @@
   ];
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
 }

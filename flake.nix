@@ -15,11 +15,11 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, nix-darwin, ... }: {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/nixos/configuration.nix
+          ./hosts/desktop/configuration.nix
         ];
       };
     };
