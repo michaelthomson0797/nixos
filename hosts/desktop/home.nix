@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../modules/home-manager/hyprland
     ../../modules/home-manager/i3
     ../../modules/home-manager/1password
     ../../modules/home-manager/git
