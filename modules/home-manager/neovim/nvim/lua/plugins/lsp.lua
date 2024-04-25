@@ -92,5 +92,8 @@ return {
       },
     }
 
+    -- eslint
+    require('lspconfig').eslint.setup({})
+
   end,
 }
