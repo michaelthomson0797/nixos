@@ -11,6 +11,11 @@ return {
       harpoon = true,
       leap = true,
       mason = true,
+      mini = {
+        enabled = true,
+      },
+      neotest = true,
+      markdown = true,
       telescope = {
         enabled = true,
       },

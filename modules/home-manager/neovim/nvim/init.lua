@@ -39,18 +39,19 @@ opt.undofile = true --Save undo history
 opt.ignorecase = true --Case insensitive searching unless /C or capital in search
 opt.smartcase = true -- Smart case
 opt.updatetime = 50 --Decrease update time
-opt.signcolumn = "yes" -- Always show sign column
-opt.clipboard = "unnamedplus" -- Access system clipboard
+opt.signcolumn = 'yes' -- Always show sign column
+opt.clipboard = 'unnamedplus' -- Access system clipboard
 opt.laststatus = 3 -- Global status line
 opt.swapfile = false
 opt.wrap = false
 vim.opt_local.conceallevel = 2
+vim.opt.inccommand = 'split'
 
 -- Time in milliseconds to wait for a mapped sequence to complete.
 opt.timeoutlen = 300
 
 opt.showmode = false -- Do not need to show the mode. We use the statusline instead.
--- opt.scrolloff = 8 -- Lines of context
+opt.scrolloff = 10 -- Lines of context
 opt.smartindent = true --Smart indent
 opt.expandtab = true
 opt.smarttab = true
@@ -89,9 +90,10 @@ vim.keymap.set("n", "<leader>fe", "<cmd>Oil<CR>")
 
 vim.keymap.set("i", "jk", "<Esc>")
 
-vim.cmd[[
-augroup highlight_yank
-autocmd!
-au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
-augroup END
-]]
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
