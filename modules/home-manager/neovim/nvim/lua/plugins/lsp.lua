@@ -79,21 +79,23 @@ return {
     })
 
     -- Server configs
+    local lsp = require('lspconfig')
 
     -- vue
-    require('lspconfig').volar.setup({})
+    lsp.volar.setup({})
 
     -- typescript / javascript
     require'lspconfig'.tsserver.setup{
-      filetypes = {
-        "javascript",
-        "typescript",
-        "vue",
-      },
+      filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue" }
     }
 
     -- eslint
-    require('lspconfig').eslint.setup({})
+    lsp.eslint.setup({})
+
+    -- tailwind
+    lsp.tailwindcss.setup({
+      root_dir = lsp.util.root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'tailwind.config.mjs', 'tailwind.config.ts')
+    })
 
   end,
 }
