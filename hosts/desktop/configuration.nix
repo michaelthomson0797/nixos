@@ -27,6 +27,16 @@
 # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+  };
+
 # i3 relates stuff
   environment.pathsToLink = [ "/libexec" ];
   services.xserver = {
@@ -71,6 +81,7 @@
 
 # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mthomson = {
+    shell = pkgs.zsh;
     isNormalUser = true;
     description = "Michael Thomson";
     extraGroups = [ "networkmanager" "wheel" ];
@@ -103,6 +114,11 @@
   ];
 
   environment.variables.EDITOR = "nvim";
+
+  programs = {
+    zsh.enable = true;
+    steam.enable = true;
+  };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
