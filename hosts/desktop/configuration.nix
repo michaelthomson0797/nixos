@@ -33,10 +33,7 @@
     driSupport32Bit = true;
   };
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    nvidiaSettings = true;
-  };
+  hardware.nvidia.modesetting.enable = true;
 
 # i3 relates stuff
   environment.pathsToLink = [ "/libexec" ];
