@@ -33,7 +33,17 @@
     fzf
     ripgrep
     jq
+    protonup
+    lutris
+    pavucontrol
+    pasystray
+    networkmanagerapplet 
+    mangohud
   ];
+
+  home.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATH = "\${HOME}/.steam/root/compatibilitytools.d";
+  };
 
   programs.home-manager.enable = true;
 }

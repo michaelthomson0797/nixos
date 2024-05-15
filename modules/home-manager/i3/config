@@ -248,4 +248,7 @@ exec_always --no-startup-id feh --bg-fill ~/wallpaper/wallpaper.jpg
 #exec_always --no-startup-id nm-applet
 
 # dunst
-#exec_always --no-startup-id dunst
+exec_always --no-startup-id dunst
+
+# pasystray
+exec_always --no-startup-id pasystray

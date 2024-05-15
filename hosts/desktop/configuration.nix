@@ -35,6 +35,7 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
+    nvidiaSettings = true;
   };
 
 # i3 relates stuff
@@ -108,16 +109,20 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs; [
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      wget
-      git
-      curl
+    wget
+    git
+    curl
   ];
 
   environment.variables.EDITOR = "nvim";
 
   programs = {
     zsh.enable = true;
-    steam.enable = true;
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+    gamemode.enable = true;
   };
 
   home-manager = {
