@@ -8,6 +8,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  networking.hostName = "macbook";
+
   nix.settings = {
     trusted-users = ["mthomson"];
 
@@ -33,7 +35,6 @@
 
   environment.variables = {
     EDITOR = "nvim";
-    ZK_NOTEBOOK_DIR = "~/notes";
   };
 
   services = {
