@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+      inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x220
       ../../modules/nixos/user.nix
       ../../modules/nixos/i3.nix
       ../../modules/nixos/nm.nix

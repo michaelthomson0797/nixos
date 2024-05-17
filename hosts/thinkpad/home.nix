@@ -11,6 +11,7 @@
     ../../modules/home-manager/tmux
     ../../modules/home-manager/taskwarrior
     ../../modules/home-manager/zoxide
+    ../../modules/home-manager/zathura
     ../../modules/home-manager/eza
     ../../modules/home-manager/bat
   ];
