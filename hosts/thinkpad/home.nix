@@ -17,6 +17,14 @@
   home.homeDirectory = "/home/mthomson";
   home.stateVersion = "23.11";
 
+  programs = {
+    direnv = {
+      enable = true;
+      enableZshIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
+  };
+
   home.packages = with pkgs; [
     firefox
     _1password-gui
