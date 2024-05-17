@@ -3,7 +3,7 @@
 {
   imports = [
     ../../modules/home-manager/i3
-    ../../modules/home-manager/1password
+    ../../modules/home-manager/ssh
     ../../modules/home-manager/git
     ../../modules/home-manager/neovim
     ../../modules/home-manager/wezterm

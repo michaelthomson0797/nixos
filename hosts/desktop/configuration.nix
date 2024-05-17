@@ -13,6 +13,7 @@
       ../../modules/nixos/sound.nix
       ../../modules/nixos/steam.nix
       ../../modules/nixos/env.nix
+      ../../modules/nixos/1password.nix
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
