@@ -30,6 +30,13 @@
           ./hosts/thinkpad/configuration.nix
         ];
       };
+      dell = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/dell/configuration.nix
+        ];
+      };
     };
 
     darwinConfigurations = {
