@@ -6,7 +6,6 @@
     ../../modules/home-manager/wezterm
     ../../modules/home-manager/zsh
     ../../modules/home-manager/tmux
-    ../../modules/home-manager/taskwarrior
     ../../modules/home-manager/zoxide
     ../../modules/home-manager/eza
     ../../modules/home-manager/bat
@@ -50,6 +49,8 @@
     wireguard-tools
     kompose
     inetutils
+    taskwarrior3
+    taskwarrior-tui
   ];
 
   programs.home-manager.enable = true;

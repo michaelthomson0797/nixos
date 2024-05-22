@@ -97,5 +97,7 @@ return {
       root_dir = lsp.util.root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'tailwind.config.mjs', 'tailwind.config.ts')
     })
 
+    -- go
+    lsp.gopls.setup({})
   end,
 }
