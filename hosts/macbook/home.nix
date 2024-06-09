@@ -45,6 +45,7 @@
     kubectl
     k9s
     kubeseal
+    velero
     fluxcd
     wireguard-tools
     kompose

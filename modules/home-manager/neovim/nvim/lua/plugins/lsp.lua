@@ -97,7 +97,16 @@ return {
       root_dir = lsp.util.root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'tailwind.config.mjs', 'tailwind.config.ts')
     })
 
+    -- html
+    lsp.html.setup({})
+
     -- go
     lsp.gopls.setup({})
+    lsp.golangci_lint_ls.setup{}
+
+    -- templ
+    vim.filetype.add({ extension = { templ = "templ" } })
+    lsp.templ.setup{}
+
   end,
 }

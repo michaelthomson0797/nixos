@@ -5,7 +5,7 @@
     enable = true;
     extraConfig = ''
     return {
-      color_scheme = 'catppuccin-mocha',
+      color_scheme = 'catppuccin-frappe',
       -- font = wezterm.font('PragmataPro Liga'),
       font_size = 16,
       use_fancy_tab_bar = false,
