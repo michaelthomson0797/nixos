@@ -1,3 +1,5 @@
+{ pkgs, config, ... }:
+
 {
   hardware.opengl = {
     enable = true;
@@ -6,6 +8,8 @@
   };
 
   hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.nvidiaSettings = true;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
   services.xserver.videoDrivers = [ "nvidia "];
 }
