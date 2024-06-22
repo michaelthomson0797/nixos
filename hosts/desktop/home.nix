@@ -14,6 +14,7 @@
     ../../modules/home-manager/eza
     ../../modules/home-manager/bat
     ../../modules/home-manager/irssi
+    ../../modules/home-manager/syncthing
   ];
   home.username = "mthomson";
   home.homeDirectory = "/home/mthomson";
@@ -39,6 +40,14 @@
     pasystray
     networkmanagerapplet 
     mangohud
+    kubectl
+    k9s
+    kubeseal
+    velero
+    fluxcd
+    zoom-us
+    crawl
+    obsidian
   ];
 
   home.sessionVariables = {

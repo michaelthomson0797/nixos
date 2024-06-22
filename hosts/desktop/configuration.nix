@@ -7,6 +7,7 @@
       inputs.home-manager.nixosModules.default
       ../../modules/nixos/bootloader.nix
       ../../modules/nixos/user.nix
+      ../../modules/nixos/ssh.nix
       ../../modules/nixos/nvidia.nix
       ../../modules/nixos/i3.nix
       ../../modules/nixos/nm.nix
@@ -14,6 +15,8 @@
       ../../modules/nixos/steam.nix
       ../../modules/nixos/env.nix
       ../../modules/nixos/1password.nix
+      ../../modules/nixos/postgres.nix
+      ../../modules/nixos/docker.nix
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -33,6 +36,7 @@
     wget
     git
     curl
+    lsof
   ];
 
   home-manager = {
