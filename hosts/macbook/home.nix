@@ -10,6 +10,7 @@
     ../../modules/home-manager/eza
     ../../modules/home-manager/bat
     ../../modules/home-manager/irssi
+    ../../modules/home-manager/email
   ];
   home.username = "mthomson";
   home.homeDirectory = "/Users/mthomson";
@@ -52,6 +53,8 @@
     inetutils
     taskwarrior3
     taskwarrior-tui
+    devenv
+    _1password
   ];
 
   programs.home-manager.enable = true;

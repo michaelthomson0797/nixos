@@ -44,6 +44,14 @@
         cmd - return : wezterm
       '';
     };
+    postgresql = {
+      enable = true;
+      ensureDatabases = [ "todos" ];
+      authentication = pkgs.lib.mkOverride 10 ''
+        #type database  DBuser  auth-method
+        local all       all     trust
+      '';
+    };
   };
 
   home-manager = {
