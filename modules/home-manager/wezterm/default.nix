@@ -1,10 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  home.packages = with pkgs; [
-    iosevka
-  ];
-
   programs.wezterm = {
     enable = true;
     extraConfig = ''

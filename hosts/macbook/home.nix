@@ -4,6 +4,7 @@
   imports = [
     ../../modules/home-manager/neovim
     ../../modules/home-manager/wezterm
+    ../../modules/home-manager/kitty
     ../../modules/home-manager/zsh
     ../../modules/home-manager/tmux
     ../../modules/home-manager/zoxide
@@ -55,6 +56,7 @@
     taskwarrior-tui
     devenv
     _1password
+    calcurse
   ];
 
   programs.home-manager.enable = true;

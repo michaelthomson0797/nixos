@@ -41,7 +41,7 @@
     skhd = {
       enable = true;
       skhdConfig = ''
-        cmd - return : wezterm
+        cmd - return : kitty
       '';
     };
     postgresql = {
