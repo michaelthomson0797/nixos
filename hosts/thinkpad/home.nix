@@ -14,6 +14,8 @@
     ../../modules/home-manager/zathura
     ../../modules/home-manager/eza
     ../../modules/home-manager/bat
+    ../../modules/home-manager/syncthing
+    ../../modules/home-manager/email
   ];
   home.username = "mthomson";
   home.homeDirectory = "/home/mthomson";
@@ -37,6 +39,9 @@
     pavucontrol
     pasystray
     networkmanagerapplet
+    _1password
+    upower
+    acpi
   ];
 
   programs.home-manager.enable = true;
