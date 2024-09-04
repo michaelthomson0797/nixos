@@ -6,12 +6,13 @@
     extraConfig = ''
     return {
       color_scheme = 'catppuccin-frappe',
-      font = wezterm.font('Iosevka'),
+      font = wezterm.font('Iosevka Nerd Font'),
       font_size = 16,
       use_fancy_tab_bar = false,
       native_macos_fullscreen_mode = false,
       enable_scroll_bar = false,
       window_decorations = "RESIZE",
+      enable_kitty_graphics = true,
       hide_tab_bar_if_only_one_tab = true,
       keys = {
         {
@@ -26,8 +27,9 @@
         top = 0,
         bottom = 0,
       },
-      -- window_background_opacity = 0.90,
-      -- macos_window_background_blur = 20,
+      window_background_opacity = 0.90,
+      macos_window_background_blur = 0,
+      front_end = "WebGpu",
     }
     '';
   };

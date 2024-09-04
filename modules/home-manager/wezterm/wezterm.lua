@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 
 return {
   color_scheme = 'catppuccin-frappe',
-  -- font = wezterm.font('PragmataPro Liga'),
+  font = wezterm.font('PragmataPro Liga'),
   font_size = 16,
   use_fancy_tab_bar = false,
   native_macos_fullscreen_mode = false,
@@ -22,6 +22,6 @@ return {
     top = 0,
     bottom = 0,
   },
-  -- window_background_opacity = 0.90,
-  -- macos_window_background_blur = 20,
+  window_background_opacity = 0.90,
+  macos_window_background_blur = 0,
 }

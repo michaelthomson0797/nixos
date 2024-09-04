@@ -6,7 +6,9 @@
       inputs.home-manager.darwinModules.default
     ];
 
+  nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowBroken = true;
 
   networking.hostName = "macbook";
 
@@ -41,15 +43,7 @@
     skhd = {
       enable = true;
       skhdConfig = ''
-        cmd - return : kitty
-      '';
-    };
-    postgresql = {
-      enable = true;
-      ensureDatabases = [ "todos" ];
-      authentication = pkgs.lib.mkOverride 10 ''
-        #type database  DBuser  auth-method
-        local all       all     trust
+        cmd - return : wezterm
       '';
     };
   };

@@ -20,6 +20,9 @@
         cdi = "zi";
         cat = "bat";
       };
+      initExtra = ''
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      '';
     };
     starship = {
       enable = true;

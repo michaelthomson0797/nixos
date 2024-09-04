@@ -3,13 +3,12 @@
 {
   imports = [
     ../../modules/home-manager/neovim
+    ../../modules/home-manager/emacs
     ../../modules/home-manager/wezterm
-    ../../modules/home-manager/kitty
     ../../modules/home-manager/zsh
     ../../modules/home-manager/tmux
     ../../modules/home-manager/zoxide
-    ../../modules/home-manager/eza
-    ../../modules/home-manager/bat
+    ../../modules/home-manager/eza ../../modules/home-manager/bat
     ../../modules/home-manager/irssi
     ../../modules/home-manager/email
   ];
@@ -43,7 +42,6 @@
     tintin
     nb
     w3m
-    lua
     kubectl
     k9s
     kubeseal
@@ -57,6 +55,8 @@
     devenv
     _1password
     calcurse
+    glow
+    gcc
   ];
 
   programs.home-manager.enable = true;
