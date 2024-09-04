@@ -94,8 +94,6 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 vim.keymap.set("n", "J", "mzJ`z")
 
-vim.keymap.set("n", "<leader>fe", "<cmd>Oil<CR>")
-
 vim.keymap.set("i", "jk", "<Esc>")
 
 vim.api.nvim_create_autocmd('TextYankPost', {
