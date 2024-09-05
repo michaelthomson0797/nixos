@@ -10,14 +10,6 @@
       source = ./calendar-password.sh;
       executable = true;
     };
-    "work-calendar-client-id.sh" = {
-      source = ./work-calendar-client-id.sh;
-      executable = true;
-    };
-    "work-calendar-client-secret.sh" = {
-      source = ./work-calendar-client-secret.sh;
-      executable = true;
-    };
   };
 
   services = {
@@ -164,22 +156,6 @@
           enable = true;
         };
       };
-      accounts.work = {
-        primary = false;
-        flavor = "gmail.com";
-        address = "mthomson@konradgroup.com";
-        realName = "Michael Thomson";
-        aerc = {
-          enable = true;
-          extraAccounts = { source = "maildir://~/Maildir/work"; };
-        };
-        notmuch = {
-          enable = true;
-        };
-        lieer = {
-          enable = true;
-        };
-      };
     };
     calendar = {
       basePath = ".calendar";
@@ -208,28 +184,6 @@
           enable = true;
           type = "discover";
           color = "#f2d5cf";
-        };
-      };
-      accounts.work = {
-        primary = false;
-        remote = {
-          type = "google_calendar";
-        };
-        vdirsyncer = {
-          enable = true;
-          collections = [ "from a" "from b" ];
-          clientIdCommand = [
-            "~/work-calendar-client-id.sh"
-          ];
-          clientSecretCommand = [
-            "~/work-calendar-client-secret.sh"
-          ];
-          tokenFile = "~/token_file";
-        };
-        khal = {
-          enable = true;
-          type = "discover";
-          color = "#e78284";
         };
       };
     };

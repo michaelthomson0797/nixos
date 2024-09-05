@@ -5,7 +5,7 @@
     enable = true;
     extraConfig = ''
     return {
-      color_scheme = 'catppuccin-frappe',
+      color_scheme = 'Ayu Dark (Gogh)',
       font = wezterm.font('Iosevka Nerd Font'),
       font_size = 16,
       use_fancy_tab_bar = false,
@@ -27,7 +27,7 @@
         top = 0,
         bottom = 0,
       },
-      window_background_opacity = 0.90,
+      window_background_opacity = 1,
       macos_window_background_blur = 0,
       front_end = "WebGpu",
     }

@@ -1,14 +1,18 @@
-{ pkgs, config, ... }:
+{ inputs, pkgs, config, ... }:
 
 {
   home.packages = with pkgs; [
     fzf
     ripgrep
     luarocks
+    luajit
+    lua-language-server
+    nil
   ];
 
   programs.neovim = {
     enable = true;
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
   };
 
   home.file.".config/nvim/" = {

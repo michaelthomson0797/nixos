@@ -27,12 +27,13 @@
       enableZshIntegration = true; # see note on other shells below
       nix-direnv.enable = true;
     };
+    spotify-player = {
+      enable = true;
+    };
   };
 
   home.packages = with pkgs; [
     btop
-    spotify
-    spotify-player
     neofetch
     jq
     tldr
@@ -57,6 +58,7 @@
     calcurse
     glow
     gcc
+    luajit
   ];
 
   programs.home-manager.enable = true;
