@@ -1,15 +1,5 @@
 return {
   {
-    'folke/lazydev.nvim',
-    ft = 'lua',
-    opts = {
-      library = {
-        { path = 'luvit-meta/library', words = { 'vim%.uv' } },
-      },
-    },
-  },
-  { 'Bilal2453/luvit-meta', lazy = true },
-  {
     'neovim/nvim-lspconfig',
     cmd = 'LspInfo',
     event = {'BufReadPre', 'BufNewFile'},
@@ -35,20 +25,26 @@ return {
         end
       })
 
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+      vim.api.nvim_create_autocmd({ "VimEnter" }, {
+        callback = function()
+          local clients = vim.lsp.get_clients()
+          for _, client in ipairs(clients) do
+            local id = client.id
+            vim.lsp.completion.enable(true, id, 1, { autotrigger = true })
+            return
+          end
+        end,
+      })
 
       -- Server configs
       local lsp = require('lspconfig')
 
       -- vue
       lsp.volar.setup({
-        capabilities = capabilities,
       })
 
       -- typescript / javascript
       require'lspconfig'.ts_ls.setup{
-        capabilities = capabilities,
         init_options = {
           plugins = {
             {
@@ -63,121 +59,35 @@ return {
 
       -- eslint
       lsp.eslint.setup({
-        capabilities = capabilities,
       })
 
       -- tailwind
       lsp.tailwindcss.setup({
-        capabilities = capabilities,
         root_dir = lsp.util.root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'tailwind.config.mjs', 'tailwind.config.ts')
       })
 
       -- html
       lsp.html.setup({
-        capabilities = capabilities,
       })
 
       -- go
       lsp.gopls.setup({
-        capabilities = capabilities,
         settings = {
           gopls = {
-            usePlaceholders = true,
+            completeFunctionCalls = false,
           }
         }
       })
       lsp.golangci_lint_ls.setup({
-        capabilities = capabilities,
       })
 
       -- templ
       vim.filetype.add({ extension = { templ = "templ" } })
-      lsp.templ.setup({
-        capabilities = capabilities,
-      })
+      lsp.templ.setup({})
 
-      lsp.lua_ls.setup({
-        capabilities = capabilities,
-      })
+      lsp.lua_ls.setup({})
 
-      lsp.nil_ls.setup({
-        capabilities = capabilities,
-      })
+      lsp.nil_ls.setup({})
     end,
   },
-  {
-    'hrsh7th/nvim-cmp',
-    event = 'InsertEnter',
-    dependencies = {
-      {
-        'L3MON4D3/LuaSnip',
-        build = (function()
-          -- Build Step is needed for regex support in snippets.
-          -- This step is not supported in many windows environments.
-          -- Remove the below condition to re-enable on windows.
-          if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
-            return
-          end
-          return 'make install_jsregexp'
-        end)(),
-        dependencies = {
-          {
-            'rafamadriz/friendly-snippets',
-            config = function()
-              require('luasnip.loaders.from_vscode').lazy_load()
-            end,
-          },
-        },
-      },
-      'saadparwaiz1/cmp_luasnip',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-    },
-    config = function()
-      -- See `:help cmp`
-      local cmp = require 'cmp'
-      local luasnip = require 'luasnip'
-      luasnip.config.setup {}
-
-      cmp.setup {
-        snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
-        },
-        completion = { completeopt = 'menu,menuone,noinsert' },
-        mapping = cmp.mapping.preset.insert {
-          ['<C-n>'] = cmp.mapping.select_next_item(),
-          ['<C-p>'] = cmp.mapping.select_prev_item(),
-          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
-          ['<C-Space>'] = cmp.mapping.complete {},
-          ['<C-l>'] = cmp.mapping(function()
-            if luasnip.expand_or_locally_jumpable() then
-              luasnip.expand_or_jump()
-            end
-          end, { 'i', 's' }),
-          ['<C-h>'] = cmp.mapping(function()
-            if luasnip.locally_jumpable(-1) then
-              luasnip.jump(-1)
-            end
-          end, { 'i', 's' }),
-        },
-        sources = {
-          {
-            name = 'lazydev',
-            -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
-            group_index = 0,
-          },
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
-        },
-      }
-    end,
-  },
-  {
-    'nvim-tree/nvim-web-devicons',
-  }
 }

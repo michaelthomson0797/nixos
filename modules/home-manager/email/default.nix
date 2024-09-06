@@ -5,17 +5,11 @@
     w3m
   ];
 
-  home.file = {
-    "calendar-password.sh" = {
-      source = ./calendar-password.sh;
-      executable = true;
-    };
-  };
-
   services = {
     # mbsync = {
     #   enable = true;
     #   frequency = "*-*-* *:*/5:00";
+    #   postExec = "\${pkgs.notmuch} new";
     # };
     vdirsyncer = {
       enable = true;
@@ -26,67 +20,12 @@
   programs = {
     aerc = {
       enable = true;
-      stylesets = {
-        catppuccin-frappe = ''
-          *.default=true
-          *.normal=true
-
-          default.fg=#c6d0f5
-
-          error.fg=#e78284
-          warning.fg=#ef9f76
-          success.fg=#a6d189
-
-          tab.fg=#737994
-          tab.bg=#292c3c
-          tab.selected.fg=#c6d0f5
-          tab.selected.bg=#303446
-          tab.selected.bold=true
-
-          border.fg=#232634
-          border.bold=true
-
-          msglist_unread.bold=true
-          msglist_flagged.fg=#e5c890
-          msglist_flagged.bold=true
-          msglist_result.fg=#8caaee
-          msglist_result.bold=true
-          msglist_*.selected.bold=true
-          msglist_*.selected.bg=#414559
-
-          dirlist_*.selected.bold=true
-          dirlist_*.selected.bg=#414559
-
-          statusline_default.fg=#949cbb
-          statusline_default.bg=#414559
-          statusline_error.bold=true
-          statusline_success.bold=true
-
-          completion_default.selected.bg=#414559
-
-          [viewer]
-          url.fg=#8caaee
-          url.underline=true
-          header.bold=true
-          signature.dim=true
-          diff_meta.bold=true
-          diff_chunk.fg=#8caaee
-          diff_chunk_func.fg=#8caaee
-          diff_chunk_func.bold=true
-          diff_add.fg=#a6d189
-          diff_del.fg=#e78284
-          quote_*.fg=#737994
-          quote_1.fg=#949cbb
-        '';
-      };
       extraConfig = {
         general = {
           unsafe-accounts-conf = true;
         };
-        ui = {
-          border-char-vertical = "│";
-          border-char-horizontal = "─";
-          styleset-name = "catppuccin-frappe";
+        compose = {
+          address-book-cmd = "khard email --parsable --remove-first-line %s";
         };
         filters = {
           "text/plain" = "colorize";
@@ -112,11 +51,9 @@
     };
     khal = {
       enable = true;
-      settings = {
-        view = {
-          agenda_event_format = "{calendar-color}{cancelled}{start-end-time-style} {title}{repeat-symbol}{reset}";
-        };
-      };
+    };
+    khard = {
+      enable = true;
     };
   };
 
@@ -127,7 +64,7 @@
         address = "michael@michaelthomson.dev";
         realName = "Michael Thomson";
         userName = "michael@michaelthomson.dev";
-        passwordCommand = "${pkgs._1password}/bin/op read \"op://Personal/SES SMTP/password\"";
+        passwordCommand = "pass email/michael@michaelthomson.dev";
         aerc = {
           enable = true;
         };
@@ -167,13 +104,9 @@
           url = "https://baikal.michaelthomson.dev/dav.php";
           userName = "michael@michaelthomson.dev";
           passwordCommand = [
-            "~/calendar-password.sh"
+            "pass"
+            "calendar/michael@michaelthomson.dev"
           ];
-          # passwordCommand = [ 
-          #   "${pkgs._1password}/bin/op" 
-          #   "read"
-          #   "op://Personal/Baikal/password"
-          # ];
         };
         vdirsyncer = {
           enable = true;
@@ -182,8 +115,40 @@
         };
         khal = {
           enable = true;
+          addresses = [ "michael@michaelthomson.dev" ];
           type = "discover";
-          color = "#f2d5cf";
+        };
+      };
+    };
+    contact = {
+      basePath = ".contacts";
+      accounts.personal = {
+        local = {
+          type = "filesystem";
+          fileExt = ".vcf";
+        };
+        remote = {
+          type = "carddav";
+          url = "https://baikal.michaelthomson.dev/dav.php";
+          userName = "michael@michaelthomson.dev";
+          passwordCommand = [
+            "pass"
+            "calendar/michael@michaelthomson.dev"
+          ];
+        };
+        vdirsyncer = {
+          enable = true;
+          auth = "basic";
+          collections = [ "default" ];
+        };
+        khal = {
+          enable = true;
+          addresses = [ "michael@michaelthomson.dev" ];
+          collections = [ "default" ];
+        };
+        khard = {
+          enable = true;
+          defaultCollection = "default";
         };
       };
     };

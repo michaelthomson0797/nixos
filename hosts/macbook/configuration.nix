@@ -56,6 +56,7 @@
       mthomson = import ./home.nix;
     };
   };
+
   programs.zsh.enable = true;
 
   # Auto upgrade nix package and the daemon service.

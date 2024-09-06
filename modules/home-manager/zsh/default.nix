@@ -20,9 +20,10 @@
         cdi = "zi";
         cat = "bat";
       };
-      initExtra = ''
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-      '';
+      #initExtra = ''
+        #eval "$(/opt/homebrew/bin/brew shellenv)"
+        #. "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
+      #'';
     };
     starship = {
       enable = true;

@@ -24,9 +24,9 @@ return { -- Collection of various small independent plugins/modules
 
     require('mini.comment').setup()
 
-    -- local icons = require('mini.icons')
-    -- icons.setup()
-    -- icons.tweak_lsp_kind()
+    local icons = require('mini.icons')
+    icons.setup()
+    icons.tweak_lsp_kind()
 
     require('mini.indentscope').setup({
       draw = {
@@ -107,7 +107,7 @@ return { -- Collection of various small independent plugins/modules
     --   saturation = 'high'
     -- })
 
-    -- require('mini.completion').setup()
+    require('mini.completion').setup()
 
     require('mini.splitjoin').setup()
 

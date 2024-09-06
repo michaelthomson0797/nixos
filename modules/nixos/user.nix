@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  programs.zsh.enable = true;
+  #programs.zsh.enable = true;
 
   nix.settings = {
     trusted-users = ["mthomson"];
@@ -18,7 +18,7 @@
 
 
   users.users.mthomson = {
-    shell = pkgs.zsh;
+    #shell = pkgs.zsh;
     isNormalUser = true;
     description = "Michael Thomson";
     extraGroups = [ "networkmanager" "wheel" ];

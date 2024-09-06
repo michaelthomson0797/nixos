@@ -11,6 +11,7 @@
     ../../modules/home-manager/eza ../../modules/home-manager/bat
     ../../modules/home-manager/irssi
     ../../modules/home-manager/email
+    ../../modules/home-manager/password-store
   ];
   home.username = "mthomson";
   home.homeDirectory = "/Users/mthomson";
@@ -58,6 +59,7 @@
     calcurse
     glow
     gcc
+    keepassxc
     luajit
   ];
 
