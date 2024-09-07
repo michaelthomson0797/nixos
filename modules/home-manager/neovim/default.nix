@@ -8,6 +8,7 @@
     luajit
     lua-language-server
     nil
+    (nerdfonts.override { fonts = [ "Iosevka" ]; })
   ];
 
   programs.neovim = {

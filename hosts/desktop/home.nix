@@ -15,6 +15,8 @@
     ../../modules/home-manager/bat
     ../../modules/home-manager/irssi
     ../../modules/home-manager/syncthing
+    ../../modules/home-manager/email
+    ../../modules/home-manager/password-store
   ];
   home.username = "mthomson";
   home.homeDirectory = "/home/mthomson";
@@ -38,7 +40,7 @@
     lutris
     pavucontrol
     pasystray
-    networkmanagerapplet 
+    networkmanagerapplet
     mangohud
     kubectl
     k9s

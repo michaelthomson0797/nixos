@@ -1,6 +1,10 @@
 { pkgs, config, ... }:
 
 {
+  home.packages = with pkgs; [
+    pinentry-curses
+  ];
+
   programs = {
     gpg = {
       enable = true;
@@ -17,9 +21,10 @@
     };
   };
 
-  # services = {
-  #   gpg-agent = {
-  #     enable = true;
-  #   };
-  # };
+  services = {
+    gpg-agent = {
+      enable = true;
+      pinentryPackage = pkgs.pinentry-curses;
+    };
+  };
 }
