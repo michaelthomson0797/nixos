@@ -23,7 +23,7 @@
 
   services = {
     gpg-agent = {
-      enable = true;
+      enable = !pkgs.stdenv.isDarwin;
       pinentryPackage = pkgs.pinentry-curses;
     };
   };
