@@ -18,7 +18,6 @@
       shellAliases = {
         cd = "z";
         cdi = "zi";
-        cat = "bat";
       };
       initExtra = ''
         . "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"

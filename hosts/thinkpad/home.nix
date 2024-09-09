@@ -12,8 +12,6 @@
     ../../modules/home-manager/taskwarrior
     ../../modules/home-manager/zoxide
     ../../modules/home-manager/zathura
-    ../../modules/home-manager/eza
-    ../../modules/home-manager/bat
     ../../modules/home-manager/syncthing
     ../../modules/home-manager/email
   ];

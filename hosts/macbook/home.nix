@@ -9,7 +9,6 @@
     ../../modules/home-manager/zsh
     ../../modules/home-manager/tmux
     ../../modules/home-manager/zoxide
-    ../../modules/home-manager/eza ../../modules/home-manager/bat
     ../../modules/home-manager/irssi
     ../../modules/home-manager/email
     ../../modules/home-manager/password-store
