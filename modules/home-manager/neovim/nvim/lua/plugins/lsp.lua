@@ -88,7 +88,7 @@ return {
       lsp.lua_ls.setup({})
 
       lsp.nil_ls.setup({})
-      lsp.clangd.setup({})
+      lsp.ccls.setup({})
       lsp.astro.setup({})
     end,
   },

@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../modules/home-manager/git
     ../../modules/home-manager/neovim
     ../../modules/home-manager/emacs
     ../../modules/home-manager/wezterm
