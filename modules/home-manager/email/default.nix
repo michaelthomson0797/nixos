@@ -70,7 +70,7 @@
         };
         mbsync = {
           enable = true;
-          create = "maildir";
+          create = "both";
         };
         imap = {
           host = "mail.michaelthomson.dev";
