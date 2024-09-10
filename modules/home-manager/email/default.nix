@@ -21,6 +21,9 @@
     aerc = {
       enable = true;
       extraConfig = {
+        ui = {
+          sort = "arrival -r";
+        };
         general = {
           unsafe-accounts-conf = true;
         };
