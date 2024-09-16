@@ -11,6 +11,7 @@
     ../../modules/home-manager/zoxide
     ../../modules/home-manager/irssi
     ../../modules/home-manager/email
+    ../../modules/home-manager/zk
     ../../modules/home-manager/password-store
   ];
   home.username = "mthomson";
@@ -19,7 +20,6 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    ZK_NOTEBOOK_DIR = "notes";
   };
 
   programs = {

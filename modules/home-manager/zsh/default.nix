@@ -1,6 +1,11 @@
 { pkgs, config, ... }:
 
 {
+
+  home.sessionVariables = {
+    ZK_NOTEBOOK_DIR = "\${HOME}/notes";
+  };
+
   programs = {
     zsh = {
       enable = true;

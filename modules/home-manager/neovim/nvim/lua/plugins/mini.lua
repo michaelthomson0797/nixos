@@ -75,7 +75,7 @@ return { -- Collection of various small independent plugins/modules
     keymap("n", "<leader>fg", pick.builtin.grep_live, { noremap = true, silent = true })
     keymap("n", "<leader>fwg", function()
       local wrd = vim.fn.expand("<cword>")
-      pick.builtin.grep_live({ pattern = wrd })
+      pick.builtin.grep({ pattern = wrd })
     end, { noremap = true, silent = true })
 
     -- require('mini.base16').setup({
@@ -106,8 +106,6 @@ return { -- Collection of various small independent plugins/modules
     --   accent     = 'bg',
     --   saturation = 'high'
     -- })
-
-    require('mini.completion').setup()
 
     require('mini.splitjoin').setup()
 

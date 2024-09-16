@@ -33,6 +33,8 @@
 
   environment.systemPackages = with pkgs; [
     hello
+    man-pages
+    man-pages-posix
   ];
 
   environment.variables = {
