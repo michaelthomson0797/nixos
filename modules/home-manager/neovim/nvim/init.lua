@@ -40,6 +40,8 @@ opt.swapfile = false
 vim.opt_local.conceallevel = 2
 vim.opt.inccommand = 'split'
 
+vim.opt.conceallevel = 2;
+
 -- Time in milliseconds to wait for a mapped sequence to complete.
 opt.timeoutlen = 300
 

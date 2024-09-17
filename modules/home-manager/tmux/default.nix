@@ -12,6 +12,8 @@
         tmuxPlugins.vim-tmux-navigator
       ];
       extraConfig = ''
+      bind '"' split-window -c "#{pane_current_path}"
+      bind % split-window -h -c "#{pane_current_path}"
       set-option -sa terminal-overrides ",xterm*:Tc"
       set -s escape-time 0
       set -g status-left-length 30 # could be any number
