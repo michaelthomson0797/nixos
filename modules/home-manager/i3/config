@@ -254,3 +254,5 @@ exec_always --no-startup-id dunst
 exec_always --no-startup-id pasystray
 
 exec_always --no-startup-id syncthing
+
+exec_always --no-startup-id blueman-applet

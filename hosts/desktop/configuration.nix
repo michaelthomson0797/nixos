@@ -8,6 +8,7 @@
       ../../modules/nixos/bootloader.nix
       ../../modules/nixos/user.nix
       ../../modules/nixos/ssh.nix
+      ../../modules/nixos/bluetooth.nix
       ../../modules/nixos/nvidia.nix
       ../../modules/nixos/i3.nix
       ../../modules/nixos/nm.nix

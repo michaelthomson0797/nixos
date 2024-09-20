@@ -28,6 +28,8 @@
     };
   };
 
+  services.blueman-applet.enable = true;
+
   home.packages = with pkgs; [
     firefox
     gcc

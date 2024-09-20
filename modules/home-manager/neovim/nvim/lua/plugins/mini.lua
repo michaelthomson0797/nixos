@@ -99,13 +99,13 @@ return { -- Collection of various small independent plugins/modules
     --   }
     -- })
     --
-    require('mini.hues').setup({
-      foreground = '#ffffff',
-      background = '#000000',
-      n_hues     = 0,
-      accent     = 'orange',
-      saturation = 'high'
-    })
+    -- require('mini.hues').setup({
+    --   foreground = '#ffffff',
+    --   background = '#000000',
+    --   n_hues     = 0,
+    --   accent     = 'orange',
+    --   saturation = 'high'
+    -- })
 
     require('mini.splitjoin').setup()
 
