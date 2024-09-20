@@ -31,6 +31,9 @@
     spotify-player = {
       enable = true;
     };
+    java = {
+      enable = true;
+    };
   };
 
   home.packages = with pkgs; [
@@ -61,6 +64,7 @@
     gcc
     keepassxc
     luajit
+    qemu
   ];
 
   programs.home-manager.enable = true;

@@ -108,6 +108,9 @@ return {
       lsp.cssls.setup({
         capabilities = capabilities,
       })
+      lsp.jdtls.setup({
+        capabilities = capabilities,
+      })
     end,
   },
   {
